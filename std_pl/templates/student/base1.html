@@ -1,0 +1,51 @@
+{%  load static %}  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu Center</title>
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="{% static 'newstyle/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'newstyle/morph.css' %}">
+    <link rel="stylesheet"  type="text/css" href="{% static 'newstyle/mynewStyle.css' %}">
+    <script src="{% static 'script.js' %}"></script>
+     <style>
+       .bg{
+            background-color: #80d1b67c!important;
+       }
+     </style>
+</head>
+<body style="background-image:url({% static 'images/col.jpg' %}); background-repeat:no-repeat;background-size:cover;">
+
+    <!--nav-->
+    <nav class="navbar">
+      <div class="log">
+<!-- Student
+      </div>
+      <ul class="navs">
+          <li class="navitem active">
+              <a href="/student/loginpage"> Home</a>
+          </li>
+          <li class="navitem">
+           <a href="#ab">Aboutus</a>
+       </li> -->
+      
+       <!-- <li class="navitem">
+           <a href="/student/loginpage"> SignIn</a>
+       </li>
+
+      </ul> -->
+  </nav> 
+    <!--/nav-->
+    {% block content %} 
+
+
+
+
+    {% endblock %}
+  <!--js-->  
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+{% extends 'tutor/tutor_homepage.html' %}
+{% load static  %}
+{% block content %}
+<style>
+body {
+
+  background-color: #cccccc;
+}
+</style>
+<center><h2><th> Notes</th></h2></center>
+      <div  class="row" >
+
+
+
+            <div class="col-lg-9" >
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+               <form method="post" action="/tutor/uploadnotes" enctype="multipart/form-data">
+                   {%csrf_token %}
+                   {{success}}
+                   <div class="form-group col-auto">
+                       <input type="text" class="form-control" name="tt" placeholder="Title" required>
+
+                   </div>
+                   <!-- <div class="form-group col-auto">
+                       <input type="date" class="form-control" name="dt"  required>
+
+                   </div> -->
+                   <div class="form-group col-auto">
+                       <input type="file" class="form-control" name="notes" required> <!--accept="/application/pdf"-->
+                       <span> Only Upload PDF files</span>
+
+                   </div>
+                   <div class="form-group col-auto">
+                       <select class="form-control" name="course1" >
+                           <option> Select course</option>
+
+                            {% for ls in data %}
+                             <option  value="{{ls.cname}}">{{ls.cname}}</option>
+                            {% endfor %}
+
+
+                       </select>
+
+                   </div>
+                   <div class="form-group col-auto">
+                        
+                          {% for ls in data %}
+                             <input type="text" name="std" value="{{ls.id}}" hidden>
+                            {% endfor %}
+                       
+
+                   </div>
+                    <div class="form-group col-auto">
+                       <input type="text" class="form-control" name="status" placeholder="enter status">
+
+                   </div>
+                    <div class="form-group col-auto">
+                       <input type="submit" class="btn btn-info" value="submit">
+
+                   </div>
+               </form>
+
+            </div>
+
+        </div>
+{% endblock %}
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->

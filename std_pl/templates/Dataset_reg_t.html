@@ -1,0 +1,150 @@
+{% extends 'tutor/base1.html' %}
+{% load static %}
+{% block content %}
+<div class="container section">
+<div class="row">
+<div class="col-lg-12">
+    {{msg}}
+<form method="POST" action="/tutor/datasetreg"onsubmit="return cv()">
+{% csrf_token %}
+<div class="row">
+    <!--col code-->
+<div class="form-group col-auto">
+<input type="text"  id="snam" name="snam" class="form-control" placeholder="Student Name" required><sup class="text-danger">*</sup>
+</div>
+<!--end col code-->
+  <!--col code-->
+  <div class="form-group col-auto">
+    <input type="radio"  name="g" value="Male"> <span> Male</span> 
+    <input type="radio"  name="g" value="Female"> <span> Female</span> 
+    <input type="radio"  name="g" value="Others"> <span> Others</span> 
+
+   </div>
+    <!--end col code-->
+      <!--col code-->
+<div class="form-group col-auto">
+    <input type="text"  name="ssc_p" class="form-control" placeholder="ssc percentage" required><sup class="text-danger">*</sup> <span>%</span>
+    </div>
+    <!--end col code-->
+      <!--col code-->
+<div class="form-group col-auto">
+    <select  name="ssc_b" class="form-control" >
+      <option value="Kerala">
+          Kerala
+
+      </option>
+      <option value="Central">
+        Central
+
+    </option>
+    <option value="Others">
+        Others
+
+    </option>
+
+    </select>
+    <sup class="text-danger">*</sup>
+    </div>
+    <!--end col code-->
+     <!--end col code-->
+      <!--col code-->
+<div class="form-group col-auto">
+    <input type="text"  name="hsc_p" class="form-control" placeholder="hsc percentage" required><sup class="text-danger">*</sup> <span>%</span>
+    </div>
+    <!--end col code-->
+     <!--end col code-->
+
+
+      <!--col code-->
+<div class="form-group col-auto">
+    <select  name="hsc_b" class="form-control" >
+      <option value="Kerala">
+          Kerala
+
+      </option>
+      <option value="Central">
+        Central
+
+    </option>
+    <option value="Others">
+        Others
+
+    </option>
+
+    </select>
+    <sup class="text-danger">*</sup>
+    </div>
+    <!--end col code-->
+      <!--col code-->
+<div class="form-group col-auto">
+    <input type="text"  name="hsc_s" class="form-control" placeholder="Hsc Subject" required><sup class="text-danger">*</sup> <span></span>
+    </div>
+    <!--end col code-->
+    <!--col code-->
+<div class="form-group col-auto">
+    <input type="text"  name="degree_p" class="form-control" placeholder="Degree Percentage" required><sup class="text-danger">*</sup> <span>%</span>
+    </div>
+    <!--end col code-->
+    <!--col code-->
+<div class="form-group col-auto">
+    <input type="text"  name="degree_t" class="form-control" placeholder="Branch" required><sup class="text-danger">*</sup> <span></span>
+    </div>
+    <!--end col code-->
+    <!--col code-->
+<div class="form-group col-auto">
+    <input type="text"  name="workex" class="form-control" placeholder="Work Experience" required><sup class="text-danger">*</sup> <span></span>
+    </div>
+    <!--end col code-->
+    <!--col code-->
+<div class="form-group col-auto">
+    <input type="text"  name="etest_p" class="form-control" placeholder="Aptitude" required><sup class="text-danger">*</sup> <span></span>
+    </div>
+    <!--end col code-->
+    <!--col code-->
+<div class="form-group col-auto">
+    <input type="text"  name="specialisation" class="form-control" placeholder="Specialisation" required><sup class="text-danger">*</sup> <span></span>
+    </div>
+    <!--end col code-->
+    <!--col code-->
+<div class="form-group col-auto">
+    <input type="text"  name="mba_p" class="form-control" placeholder="MBA Percentage" required><sup class="text-danger">*</sup> <span>%</span>
+    </div>
+    <!--end col code-->
+     <!--col code-->
+<div class="form-group col-auto">
+    <input type="text"  name="Department" class="form-control" placeholder="Department" required><sup class="text-danger">*</sup> <span></span>
+    </div>
+    <!--end col code-->
+   <!-- button -->
+   <div class="col-lg-12">
+       <input type="submit" class="btn btn-warning" value="submit">
+
+       </div>
+    
+    </form>
+<script>
+function cv(){
+                    var n=document.getElementById("snam").value;
+                    
+    
+                    const re=/^[a-zA-Z ]+$/;
+                    
+                    if(!re.test(n)){
+                        alert("Only Alphabetic Characters...")
+                        return false;
+                    }
+                    
+                    
+    
+    
+                }
+</script>
+</div> <!--second row end-->
+</div>
+</div>
+
+</div><!-- main col end-->
+</div><!-- main row end --></div> <!-- main container end -->
+</div>
+{% endblock %}
+

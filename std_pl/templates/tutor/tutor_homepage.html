@@ -1,0 +1,93 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <script src="{% static 'jquery.js' %}"></script>
+    <title>Tutor Homepage</title>
+  </head>
+  <body style="background-image:url({% static 'images/col.jpg' %}); background-repeat:no-repeat;background-size:cover;" >
+
+    <div  class="container-fluid">
+        <div   class="row">
+            <nav class="navbar navbar-dark bg-info">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'images/College.jpg' %}" alt="" width="100" height="100" class="d-inline-block align-text-top">
+    Edu Center
+    </a>
+  </div>
+</nav>
+        </div>
+<style>
+    .nav a{
+        display:block;
+        position:relative;
+        width:100%;
+        left:13px;
+        border-radius:6%;
+        margin-bottom:5px;
+        background-color:tan;
+
+    }
+    .nav a:hover{
+        display:block;
+        position:relative;
+        width:100%;
+        left:20px;
+        border-radius:6%;
+        margin-bottom:5px;
+        background-color:white!important;
+
+    }
+</style>
+
+        <!--2row two column-->
+        <div  class="row">
+            <div class="col-lg-3 bg-info">
+                <nav class="nav flex-column ">
+  <a class="nav-link bg-warning text-dark active" aria-current="page" href="/tutor/home">Home</a>
+
+  <a class="nav-link bg-warning text-dark" href="/tutor/uploadnotes">Upload Notes</a>
+  <a class="nav-link bg-warning text-dark" href="/tutor/uploadworks">Upload Works</a>
+  <a class="nav-link bg-warning text-dark" href="/tutor/seeassignt">Student Assignment</a>
+  <a class="nav-link bg-warning text-dark" href="/tutor/tutemail">Send Mail </a>
+  <a class="nav-link bg-warning text-dark" href="/adminApp/datasetreg">Prediction</a>
+  
+<!-- <a class="nav-link bg-warning text-dark" href="/Minor_Programmer/mpdetailsT">View Minor Programmer Details </a>
+                    <a class="nav-link bg-warning text-dark" href="/Minor_Programmer/viewminorwork" >View Minor Programmer Work </a> -->
+                    <!-- <a class="nav-link bg-warning text-dark" href="/tutor/tutemail">Email </a> -->
+                    <!-- <a class="nav-link bg-warning text-dark" href="/admin_module/tutnots">Notifications </a> -->
+                    <a class="nav-link bg-warning text-dark" href="/tutor/logout"><img src="{% static 'images/logout.jpg' %}" width="80" height="80"> Logout</a>
+
+</nav>
+            </div>
+
+            <div class="col-lg-9">
+     {% block content %}
+
+
+
+                {% endblock %}
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

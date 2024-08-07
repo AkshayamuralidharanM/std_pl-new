@@ -1,0 +1,46 @@
+{% extends 'tutor/base1.html' %}
+{% load static %}
+ {% block content %}
+<style>
+body {background-color: powderblue;}
+h2   {color:black;}
+</style>
+<br>
+<br>
+<br>
+<br>
+<center><h2><th> REGISTERED TUTOR DETAILS</th></h2></center>
+<table class="table table-striped table-success">
+    <tr>
+        <th>Tutor Name</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Photo</th>
+        <th>Remove</th>
+
+        
+
+
+    </tr>
+    {% for ls in data %}
+      <tr>
+          <td>{{ls.tname}}</td>
+          <td>{{ls.address}}</td>
+          <td>{{ls.gender}}</td>
+          <td>{{ls.phoneno}}</td>
+          <td>{{ls.email}}</td>
+          <td>{{ls.dpt}}</td>
+          <td>{{ls.desi}}</td>
+          <td>{{ls.photo}}</td>
+          <td><a href="/adminApp/tutdelt?idn={{ls.id}}">Delete</a></td>
+          
+
+
+      </tr>
+    {% endfor %}
+</table>
+{% endblock %}

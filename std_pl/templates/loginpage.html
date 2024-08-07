@@ -1,0 +1,30 @@
+
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+<div class="row">
+<div class='col-lg-12'>
+ <h1> AdminLogin Page</h1>
+ <form method="POST" action="">
+ 
+ <!-- #username&password -->
+ <div class="form-control">
+ <label id='user' class="col-form-label"><sup class="text-danger">Username</label>
+ <input type="text" id='user' name="user" placeholder="Username" required>
+ </div>
+ <div class="form-control">
+ <label id='passw' class="col-form-label"><sup class="text-danger"> Password</label>
+ <input type="password" id='passw' name="passw" placeholder="Password" required>
+ </div>
+ <div class="form-control">
+ 
+ <input type="submit"  values>
+ </div>
+
+ </form>
+</div>
+</div>
+</div>
+
+{% endblock %}

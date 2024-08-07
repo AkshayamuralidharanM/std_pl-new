@@ -1,0 +1,37 @@
+{% extends 'adminApp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container section">
+    <form method="post" action="/adminApp/">
+        {% csrf_token %}
+<div class="row offset-">
+    <div class="col-lg-6" align="center">
+        <img src="{% static 'images/admin.png' %}" style="width:200px; height:200px; text-align: center;"class="center">
+    </div>
+<div class='col-lg-6'>
+ <h1> SignIn Page</h1>
+
+ 
+ <!-- #username&password -->
+ <div class="form-control">
+     {{msg}}
+     
+ <label id='user' class="col-form-label"><sup class="text-danger" >User Name:</label>
+ <input type="text"  class="form-control"id='user' name="user" placeholder="Username"  required>
+ </div>
+ <div class="form-control">
+ <label id='passw' class="col-form-label"><sup class="text-danger"> Password:</label>
+ <input type="password" class="form-control" id='passw' name="passw" placeholder="Password"  required>
+ </div>
+ <div class="form-control">
+ 
+ <input type="submit"  value="submit">
+ </div>
+
+
+</div>
+</div>
+</form>
+</div>
+
+{% endblock %}

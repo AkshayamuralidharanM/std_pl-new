@@ -1,0 +1,76 @@
+
+{% extends 'tutor/base.html' %}
+{% load static %} 
+{% block content %}
+<div class="container" style="position:relative; z-index:0; top:120px;">
+    <div class="row">
+        {{msg}}
+        <div class="col-lg-12">
+            <form action="/tutor/tutor_reg" method="post" enctype="multipart/form-data"onsubmit="return cv()">
+                {% csrf_token %}
+                <p>
+                    <input type="text" id ="tname" name="tname" placeholder="Enter Your Name" required>
+                </p>
+                <p>
+                    <input type="email" name="eml" placeholder="Enter Your Email" required>
+                </p>
+                <p>
+                    <input type="tel" id = "mb" name="mb" placeholder="Enter Your Mobile" required>
+
+                </p>
+                <p>
+                  <label for="male">Male</label>  <input type="radio" name="gen" id="male" value="male">
+                  <label for="female">Female</label>  <input type="radio" name="gen" id="female" value="female">
+                </p>
+                <p>
+                   <label>Address</label>
+                    <textarea name="add" cols="25" rows="4"></textarea>
+                </p>
+                <p>
+                    <input type="text" name="user" placeholder="Username" required>
+                    <br>
+                    <input type="password" name="pss" placeholder="Password" required>
+
+                </p>
+          
+                <p>
+                    <input type="text" name="dep" placeholder="Department" required>
+                </p>
+                <p>
+                    <input type="file" name="timage" required>
+                </p>
+                <p>
+                    <button type="submit">
+                        Submit
+                    </button>
+                </p>
+            </form>
+            <script>
+                function cv(){
+                    var n=document.getElementById("tname").value;
+                    var ph=document.getElementById("mb").value;
+    
+                    const re=/^[a-zA-Z ]+$/;
+                    const p=/^[0-9 ]+$/;
+                    if(!re.test(n)){
+                        alert("Only Alphabetic Characters...")
+                        return false;
+                    }
+                    if(!p.test(ph)){
+                        alert("Only Numerical values...")
+                        return false;
+                    }
+                    else if(ph.length!=10){
+                         alert("Only 10 digits allowed...")
+                         return false;
+                     
+                    }
+    
+    
+                }
+            </script>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th> Student name</th>
+        <th> Address</th>
+        <th>Gender</th>
+        <th>Phone Number</th>
+        <th>   DOB</th>
+        <th>Guardian Name </th>
+        <th>Guardian Phone Number</th>
+        <th>Email</th>
+        <th>User Name</th>
+        <th>Password</th>
+    </tr>
+    {% for ls in data %}
+      <tr>
+          <td>{{ls.studentname}}</td>
+          <td>{{ls.address}}</td>
+          <td>{{ls.gender}}</td>
+          <td>{{ls.phoneno}}</td>
+          <td>{{ls.dob}}</td>
+          <td>{{ls.gname}}</td>
+          <td>{{ls.gphno}}</td>
+          <td>{{ls.email}}</td>
+          <td>{{ls.username}}</td>
+          <td>{{ls.passwd}}</td>
+
+      </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
